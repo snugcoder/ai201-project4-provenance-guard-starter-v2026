@@ -39,6 +39,8 @@
 <!-- The path a submission takes, from arriving to the label a reader sees.
      Six or seven steps — this is the trace you wrote in Milestone 1. -->
 
+     The path takes a submition written with 
+     [POST /submit], feeds it into the two models, [stylometry,py + detector.py], logs the decision into a JSON, and returns the answer. 
 
 
 ---
@@ -53,19 +55,19 @@
 
 ### Signal one — the model signal
 
-**What it measures:**
+**What it measures:** perplexity
 
-**Why that might differ between human and AI writing:**
+**Why that might differ between human and AI writing:** humans have an ordinary writing sentence structure that spans across level of native speaking. This model also works across levels of formality because an AI bot wouldn't write with a ton of rare words. It cannot distinguish between what each reader would determine as a rare word. Rare words are different for each audience. 
 
-**What it can't see:**
+**What it can't see:** Rare words
 
 ### Signal two — the style signal
 
-**What it measures:**
+**What it measures:** shape of the text
 
-**Why that might differ between human and AI writing:**
+**Why that might differ between human and AI writing:** Human writing is lumpy, it can be a 5 word long sentence followed by a 40 word paragraph. It can include many typos, unclosed strings, numerous misplaced commas, random line breaks and pauses, etc.
 
-**What it can't see:**
+**What it can't see:** meaning, its not meant to.
 
 ### The combining rule
 
